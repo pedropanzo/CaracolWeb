@@ -1,18 +1,32 @@
 import { useAuth } from '../../../hooks/useAuth'
+import DashboardGrid from '../../../components/dashboard/DashboardGrid'
 
-export default function Dashboard(){
-    const { user, token, logout } = useAuth()
+export default function Dashboard() {
+  const { user, logout } = useAuth()
 
-    return (
+  return (
+    <div className="p-6 space-y-6">
+      
+      {/* HEADER */}
+      <div className="flex items-center justify-between">
         <div>
-      <h1>Dashboard</h1>
+          <h1 className="text-2xl font-bold">Dashboard</h1>
+          <p className="text-sm text-gray-500">
+            Bem-vindo, {user?.name}
+          </p>
+        </div>
 
-      <p>Bem-vindo {user?.name}</p>
-      <p>Bem-vindo {token}</p>
-      <button onClick={logout}>
-        Logout
-      </button>
+        <button
+          onClick={logout}
+          className="px-4 py-2 bg-red-500 text-white rounded"
+        >
+          Logout
+        </button>
+      </div>
+
+      {/* WIDGET GRID */}
+      <DashboardGrid />
+
     </div>
-  
-    )
+  )
 }

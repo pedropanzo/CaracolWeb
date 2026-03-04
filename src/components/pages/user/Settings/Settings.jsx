@@ -13,7 +13,6 @@ export default function Settings() {
               <div className="col-12">
                 <ChangePassword />M .
               </div>
-
               <div className="col-12">
                 <NotificationPreferences />
               </div>

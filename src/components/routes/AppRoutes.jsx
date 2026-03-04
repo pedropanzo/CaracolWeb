@@ -5,6 +5,7 @@ import AuthLayout from '../Layout/AuthLayout';
 
 import Login from '../pages/auth/Login'
 import Dashboard from '../pages/dashboard/Dashboard'
+import StudentProfile from '../pages/student/StudentProfile';
 import NotFound from '../pages/notFound/NotFound'
 import Register from '../pages/auth/register'
 
@@ -27,6 +28,7 @@ export default function AppRoutes() {
       <Route element={<PrivateRoute />}>
         <Route element={<AppLayout />}>
           <Route path="/" element={<Dashboard />} />
+          <Route path="/estudante/perfil" element={<StudentProfile />} />
           <Route path="/perfil" element={<Profile />} />
         <Route path="/configuracoes" element={<Settings />} />
         </Route>

@@ -5,7 +5,12 @@ import AuthLayout from '../Layout/AuthLayout';
 
 import Login from '../pages/auth/Login'
 import Dashboard from '../pages/dashboard/Dashboard'
-import StudentProfile from '../pages/student/StudentProfile';
+import StudentList from '../pages/students/StudentsList'
+import StudentForm from '../pages/students/StudentForm'
+import SchoolForm from '../pages/school/SchoolForm';
+import SchoolList from '../pages/school/SchoolList';
+import AcademicYearPage from '../pages/academicYear/AcademicYear';
+import DepartmentsList from '../pages/department/DepartmentsList';
 import NotFound from '../pages/notFound/NotFound'
 import Register from '../pages/auth/register'
 
@@ -28,7 +33,12 @@ export default function AppRoutes() {
       <Route element={<PrivateRoute />}>
         <Route element={<AppLayout />}>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/estudante/perfil" element={<StudentProfile />} />
+          <Route path="/alunos" element={<StudentList />} />
+          <Route path="/alunos/novo" element={<StudentForm />} />
+          <Route path="/escolas/nova" element={<SchoolForm />} />
+          <Route path="/escolas" element={<SchoolList />} />
+          <Route path="/ano-lectivo" element={<AcademicYearPage />} />
+          <Route path="/departamentos" element={<DepartmentsList />} />
           <Route path="/perfil" element={<Profile />} />
         <Route path="/configuracoes" element={<Settings />} />
         </Route>

@@ -13,7 +13,6 @@ import AcademicYearPage from '../pages/academicYear/AcademicYear';
 import DepartmentsList from '../pages/department/DepartmentsList';
 import NotFound from '../pages/notFound/NotFound'
 import Register from '../pages/auth/register'
-
 import Profile from "../pages/user/Profile/Profile";
 import Settings from "../pages/user/Settings/Settings";
 
@@ -38,7 +37,7 @@ export default function AppRoutes() {
           <Route path="/escolas/nova" element={<SchoolForm />} />
           <Route path="/escolas" element={<SchoolList />} />
           <Route path="/ano-lectivo" element={<AcademicYearPage />} />
-          <Route path="/departamentos" element={<DepartmentsList />} />
+          <Route path="/departamentos" element={<DepartmentsList />} /> 
           <Route path="/perfil" element={<Profile />} />
         <Route path="/configuracoes" element={<Settings />} />
         </Route>

@@ -2,7 +2,6 @@ import { BrowserRouter } from 'react-router-dom'
 import  AppRoutes  from './components/routes/AppRoutes.jsx'
 
 import './assets/css/bootstrap.min.css';
-import './App.css';
 import './assets/font-awesome/css/font-awesome.css'
 import './assets/css/animate.css'
 import './assets/css/style.css'

@@ -22,6 +22,7 @@ export default function Sidebar() {
       submenu: [
         { name: "Lista de Alunos", path: "/alunos" },
         { name: "Cadastrar Aluno", path: "/alunos/novo" },
+        { name: "Dados Academicos", path: "/alunos/academico" },
       ],
     },
     { icon: faUsers, name: "Professores", path: "/professores" },

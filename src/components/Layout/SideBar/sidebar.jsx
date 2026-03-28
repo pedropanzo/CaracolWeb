@@ -6,7 +6,7 @@ import { faHouse, faCommentSms, faUserGraduate, faUsers, faFile, faPrint, faSack
 
 export default function Sidebar() {
   const location = useLocation()
-  const { user, logout } = useAuth()
+  const { user } = useAuth()
   const [openMenu, setOpenMenu] = useState(null)
 
   const toggleMenu = (name) => {

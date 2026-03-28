@@ -27,7 +27,7 @@ export default function Sidebar() {
     setOpenMenu((current) => (current === name ? null : name))
   }
 
-  const menu = [    
+  const menu = [
     {
       icon: faHouse,
       name: "Home | Dashboard",
@@ -35,7 +35,7 @@ export default function Sidebar() {
         { name: "Home", path: "/Dashboard/" },
         { name: "Dashboard 1", path: "/Dashboard/Dashboard1" },
         { name: "Dashboard 2", path: "/Dashboard/Dashboard2" },
-        { name: "Dashboard 3", path: "/Dashboard/Dashboard3" },        ,
+        { name: "Dashboard 3", path: "/Dashboard/Dashboard3" }, ,
       ],
     },
     { icon: faCommentSms, name: "SMS | Email", path: "/mensagem" },
@@ -46,37 +46,79 @@ export default function Sidebar() {
         { name: "Inscrição", path: "/alunos" },
         { name: "Confirmação", path: "/alunos/confirmacao" },
         { name: "Dados Academicos", path: "/alunos/confirmacao" },
-        { name: "Dados Pessoais", path: "/alunos/academico" },        
+        { name: "Dados Pessoais", path: "/alunos/academico" },
         { name: "Suspensão", path: "/alunos/suspensao" },
       ],
     },
-    { icon: faUsers, name: "Professores", path: "/professores" },
+    {
+      icon: faUsers,
+      name: "Funcionários",
+      submenu: [
+        { name: "Administrativos", path: "/professores" },
+        { name: "Professores", path: "/professores" },
+        { name: "Utilizadores", path: "/professores" },
+      ],
+    },
     {
       icon: faFile,
-      name: "Implementação",
+      name: "Implementações",
       submenu: [
         { name: "Classes", path: "/Classe" },
-        { name: "Disciplina", path: "/Disciplina" },
+        { name: "Curso", path: "/Curso" },
+        { name: "classe", path: "/classe" },
+        { name: "Turma", path: "/Turma" },
+        { name: "Horário", path: "/Horario" },
       ],
     },
     {
-      icon: faSackDollar, name: "Financeiro",
+      icon: faFile,
+      name: "Pedagógico",
       submenu: [
-        { name: "Serviços", path: "/servicos" },
-        { name: "Custo serviço", path: "/custo-servico" },
+        { name: "Lançamento de notas", path: "/Classe" },
+        { name: "Cumprimento de notas", path: "/Curso" },
+        { name: "Notas implantadas", path: "/classe" },
+        { name: "Transição de classe", path: "/Turma" },
+      ],
+    },
+    {
+      icon: faSackDollar, name: "Finanças",
+      submenu: [
+        { name: "Pagamentos", path: "/Pagamentos" },
+        { name: "Despesas", path: "/Despesas" },
+        { name: "Acumulados", path: "/Acumulados" },
+        { name: "Estatísticas financeira", path: "/Acumulados" },
+        { name: "Banco", path: "/Acumulados" },
       ]
     },
-    { icon: faBus, name: "Transporte", path: "/transporte" },
-    { icon: faPrint, name: "Relatórios", path: "/relatorios" },
+    {
+      icon: faBus, name: "Serviço de Transporte",
+      submenu: [
+        { name: "Viaturas", path: "/Viaturas" },
+        { name: "Controlo de Rotas", path: "/Despesas" },
+        { name: "Controlo de pessageiros", path: "/Acumulados" },
+        { name: "Pagamentos", path: "/Acumulados" },
+        { name: "Custos", path: "/Acumulados" },
+      ]
+    },
+    {
+      icon: faPrint, name: "Impressões",
+      submenu: [
+        { name: "Imp. Administrativas", path: "/Viaturas" },
+        { name: "Imp. Pedagógicas", path: "/Despesas" },
+        { name: "Imp. Finançeiras", path: "/Acumulados" },       
+      ]
+    },    
     {
       icon: faGear,
-      name: "Definicao",
+      name: "Definições",
       submenu: [
-        { name: "Ano Lectivo", path: "/ano-lectivo" },
+        { name: "Ano lectivo", path: "/ano-lectivo" },
         { name: "Departamento", path: "/departamentos" },
-        { name: "Configuracao", path: "/escolas" },
+        { name: "Serviços", path: "/escolas" },
+        { name: "Custo de serviços", path: "/escolas" },
+        { name: "Configurações", path: "/escolas" },
       ],
-    },
+    },    
   ]
 
   return (
@@ -87,7 +129,7 @@ export default function Sidebar() {
         minHeight: "100vh",
       }}
     >
-  {/* Perfil */}
+      {/* Perfil */}
       <div className="d-flex align-items-center gap-3 p-4">
         <div className="dropdown profile-element">
           <span>

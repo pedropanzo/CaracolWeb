@@ -38,7 +38,7 @@ const Menu = () => {
                 { name: "Dashboard 3", path: "/Dashboard/Dashboard3" }, ,
             ],
         },
-        { icon: faCommentSms, name: "SMS | Email", path: "/mensagem" },
+        { icon: iconsms, name: "SMS | Email", path: "/mensagem" },
         {
             icon: faUserGraduate,
             name: "Aluno",
@@ -124,6 +124,7 @@ const Menu = () => {
         <nav className="navbar-default navbar-static-side" role="navigation">
             <div className="sidebar-collapse">
                 <ul className="nav metismenu" id="side-menu">
+                    { /*  =================== Perfil =================*/}
                     <li className="nav-header">
                         <div className="dropdown profile-element">
                             <span>
@@ -150,57 +151,45 @@ const Menu = () => {
                         </div>
                     </li>
 
-                    { /*  =================== Área de teste =================*/ }
+                    { /*  =================== Área de teste =================*/}
 
                     {menu.map((item) => (
-          <li key={item.name}>
-            {item.submenu ? (
-              <>
-                <button
-                  type="button"
-                  className={`btn btn-link text-start w-100 text-white d-flex align-items-center justify-content-between ${location.pathname.startsWith(item.path) ? "fw-bold" : ""
-                    }`}
-                  onClick={() => toggleMenu(item.name)}
-                  style={{ textDecoration: "none" }}
-                >
-                  <span>
-                    <FontAwesomeIcon icon={item.icon} className="me-2" />
-                    {item.name}
-                  </span>
-                  <span className="ms-2">{openMenu === item.name ? "▾" : "▸"}</span>
-                </button>
-
-                <ul className={`nav flex-column ps-3 ${openMenu === item.name ? "d-block" : "d-none"}`}>
-                  {item.submenu.map((sub) => (
-                    <li key={sub.path}>
-                      <Link
-                        to={sub.path}
-                        className={`nav-link text-white py-1 ${location.pathname === sub.path ? "fw-bold" : ""}`}
-                        style={{ borderLeft: location.pathname === sub.path ? "3px solid white" : "none" }}
-                      >
-                        {sub.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </>
-            ) : (
-              <Link
-                to={item.path}
-                className={`nav-link text-white ${location.pathname === item.path ? "fw-bold" : ""}`}
-                style={{ borderLeft: location.pathname === item.path ? "3px solid white" : "none" }}
-              >
-                <FontAwesomeIcon icon={item.icon} className="me-2" />
-                {item.name}
-              </Link>
-            )}
-          </li>
-        ))}
-        
+                        <li key={item.name}>
+                            {item.submenu ? (
+                                <>
+                                    <a                                       
+                                        className={` ${location.pathname.startsWith(item.path) ? "active" : ""
+                                            }`}
+                                        onClick={() => toggleMenu(item.name)}
+                                        style={{ textDecoration: "none" }}
+                                    >
+                                        <span>
+                                            <FontAwesomeIcon icon={item.icon} className="me-2" />
+                                            {item.name}
+                                        </span>                                                                         
+                                    </a>
+                                    
+                                    <ul className="nav nav-second-level collapse">
+                                        {item.submenu.map((sub) => (
+                                            <li key={sub.path}>
+                                                <Link to={sub.path}>{sub.name} </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </>
+                            ) : (
+                                <li>
+                                    <Link to={item.path} className={`${location.pathname === item.path ? "active" : ""}`}>
+                                        <img src={item.icon} /> <span> {item.name}</span>
+                                    </Link>
+                                </li>
+                            )}
+                        </li>
+                    ))}
                     <li>
                         <a href="index" ><img src={iconhome} /><span> Home</span></a>
                     </li>
-                    { /*  =====================================================*/ }
+                    { /*  =====================================================*/}
 
                     <li>
                         <a href="index" ><img src={iconhome} /><span> Home</span></a>
@@ -209,7 +198,7 @@ const Menu = () => {
                         <a href="#layouts.html"><img src={iconsms} /><span className="nav-label"> SMS | Email</span></a>
                     </li>
                     <li>
-                        <a><img src={iconStud} /> <span className="nav-label"> Aluno</span></a>
+                        <a> <span className="nav-label"> <img src={iconStud} /> Aluno</span></a>
                         <ul className="nav nav-second-level collapse">
                             <li><a href="index">Inscrição</a></li>
                             <li><a href="Index">Confirmação</a></li>

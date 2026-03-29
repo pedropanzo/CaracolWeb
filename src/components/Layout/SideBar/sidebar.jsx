@@ -25,7 +25,7 @@ const Sidebar = () => {
             icon: iconhome,
             name: "Home | Dashboard",
             submenu: [
-                { name: "Home", path: "/Dashboard/" },
+                { name: "Home", path: "/Dashboard/Dashboard" },
                 { name: "Dashboard 1", path: "/Dashboard/Dashboard1" },
                 { name: "Dashboard 2", path: "/Dashboard/Dashboard2" },
                 { name: "Dashboard 3", path: "/Dashboard/Dashboard3" },
@@ -36,10 +36,10 @@ const Sidebar = () => {
             icon: iconStud,
             name: "Aluno",
             submenu: [
-                { name: "Inscrição", path: "/alunos" },
+                { name: "Inscrição", path: "/alunos/novo" },
                 { name: "Confirmação", path: "/alunos/confirmacao" },
-                { name: "Dados Academicos", path: "/alunos/confirmacao" },
-                { name: "Dados Pessoais", path: "/alunos/academico" },
+                { name: "Dados Academicos", path: "/alunos/index" },
+                { name: "Dados Pessoais", path: "/alunos" },
                 { name: "Suspensão", path: "/alunos/suspensao" },
             ],
         },
@@ -56,10 +56,10 @@ const Sidebar = () => {
             icon: iconbooks,
             name: "Implementações",
             submenu: [
-                { name: "Classes", path: "/Classe" },
                 { name: "Curso", path: "/Curso" },
-                { name: "classe", path: "/classe" },
+                { name: "Classe", path: "/Classe" },                            
                 { name: "Turma", path: "/Turma" },
+                { name: "Discplina", path: "/Disciplina" },
                 { name: "Horário", path: "/Horario" },
             ],
         },
@@ -96,9 +96,9 @@ const Sidebar = () => {
         {
             icon: iconprint, name: "Impressões",
             submenu: [
-                { name: "Imp. Administrativas", path: "/Viaturas" },
-                { name: "Imp. Pedagógicas", path: "/Despesas" },
-                { name: "Imp. Finançeiras", path: "/Acumulados" },
+                { name: "Imp. Administrativas", path: "/relatorios" },
+                { name: "Imp. Pedagógicas", path: "/relatorios" },
+                { name: "Imp. Finançeiras", path: "/relatorios" },
             ]
         },
         {
@@ -107,8 +107,8 @@ const Sidebar = () => {
             submenu: [
                 { name: "Ano lectivo", path: "/ano-lectivo" },
                 { name: "Departamento", path: "/departamentos" },
-                { name: "Serviços", path: "/escolas" },
-                { name: "Custo de serviços", path: "/escolas" },
+                { name: "Serviços", path: "/servicos" },
+                { name: "Custo de serviços", path: "/custo-servico" },
                 { name: "Configurações", path: "/escolas" },
             ],
         },

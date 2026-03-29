@@ -144,7 +144,7 @@ const Sidebar = () => {
                         </div>
                     </li>
 
-                    { /*  =================== Área de teste =================*/}
+                    { /*  =================== Menu =================*/}
 
                     {menu.map((item) => (
                         <li key={item.name}>
@@ -161,7 +161,7 @@ const Sidebar = () => {
                                     </ul>
                                 </>
                             ) : (<>
-                                <Link to={item.path} className={`nav-label ${location.pathname.startsWith(item.path) ? "active" : "" }`}>
+                                <Link to={item.path} className={`${location.pathname.startsWith(item.path) ? "active" : "" }`}>
                                     <img src={item.icon} style={{ marginRight: "5px" }} /> <span> {item.name}</span>
                                 </Link>
 
@@ -169,30 +169,7 @@ const Sidebar = () => {
                             </>)}
                         </li>
                     ))}
-                    { /*  =====================================================*/}
-
-                    <li>
-                        <a href="#">
-                            <img src={iconprint} /> <span className="nav-label">Impressões </span><span className="fa arrow"></span>
-                        </a>
-                        <ul className="nav nav-second-level collapse">
-                            <li> <a href="#">Imp. Administrativas</a></li>
-                            <li> <a href="#">Imp. Pedagógicas</a></li>
-                            <li> <a href="#">Imp. Finançeiras</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src={iconsettings} /> <span className="nav-label">Definições </span><span className="fa arrow"></span>
-                        </a>
-                        <ul className="nav nav-second-level collapse">
-                            <li> <a href="Index">Ano lectivo</a></li>
-                            <li> <a href="#">Departamento</a></li>
-                            <li> <a href="#">Serviços</a></li>
-                            <li> <a href="#">Custo de serviços</a></li>
-                            <li> <a href="Index">Configurações</a></li>
-                        </ul>
-                    </li>
+                    { /*  =====================================================*/}                                    
 
                 </ul>
             </div>

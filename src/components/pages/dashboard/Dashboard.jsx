@@ -1,8 +1,7 @@
-import DashboardGrid from '../../../components/dashboard/DashboardGrid'
 
+import './Dashboard1.css';
 import { useEffect, useState } from "react";
 import iconCaracol from "./../../../assets/img/COLEGIAL.png";
-import './Dashboard.css'
 
 const diasSemana = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
 const meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];

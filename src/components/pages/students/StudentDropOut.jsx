@@ -4,18 +4,16 @@ import StudentSearch from '../../Student/StudentSearch'
 import StudentStats from '../../Student/StudentStats'
 import StudentTable from '../../Student/StudentTable'
 
-export default function StudentPage(){
+export default function StudentDropOut(){
     const [search, setSearch] = useState("")
 
-    const filtered = data.filter(s =>
-        s.name.toLowerCase().includes(search.toLowerCase())
-    )
+    const desistentes = data.filter(s => s.estado === "Desactivo" || s.estado === "Desistente")
+    
     return (
         <div className='container mt-4'>
-            <h3 className='mb-3'>Dados geral dos alunos</h3>
+            <h3 className='mb-3'>Dados dos alunos desistentes</h3>
             <StudentSearch search={search} setSearch={setSearch} />
-            <StudentStats student={filtered} />
-            <StudentTable student={filtered} />
+            <StudentTable student={desistentes} />
         </div>
     )
 }

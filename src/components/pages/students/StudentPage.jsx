@@ -12,7 +12,7 @@ export default function StudentPage(){
     )
     return (
         <div className='container mt-4'>
-            <h3 className='mb-3'>Dados gerais dos alunos</h3>
+            <h3 className='mb-3'>Dados geral dos alunos</h3>
             <StudentSearch search={search} setSearch={setSearch} />
             <StudentStats student={filtered} />
             <StudentTable student={filtered} />

@@ -22,6 +22,8 @@ import Disciplina from '../pages/disciplina/DisciplinesPage'
 import ServiceCostPage from '../pages/service-cost/ServiceCostPage'
 import Profile from "../pages/user/Profile/Profile";
 import Settings from "../pages/user/Settings/Settings";
+<pages />
+
 
 
 
@@ -41,6 +43,7 @@ export default function AppRoutes() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/alunos" element={<StudentList />} />
           <Route path="/alunos/novo" element={<StudentForm />} />
+          <Route path="/alunos/academico" element={<StudentsAcademico/>} />
           <Route path="/escolas/nova" element={<SchoolForm />} />
           <Route path="/escolas" element={<SchoolList />} />
           <Route path="/ano-lectivo" element={<AcademicYearPage />} />

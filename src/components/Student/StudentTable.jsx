@@ -60,7 +60,7 @@ export default function StudentTable({ student }){
                                     Visualizar
                                 </button>
                                 <button
-                                    className="btn btn-sm btn-warning"
+                                    className="btn btn-sm btn-light"
                                 >
                                     Editar
                                 </button>

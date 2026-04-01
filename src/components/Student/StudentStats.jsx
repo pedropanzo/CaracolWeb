@@ -7,20 +7,20 @@ export default function StudentStats({ student }){
         <div className="row text-center mb-3">
             <div className="col-md-4">
                 <div className="card p-2">
-                    <h6>Total de Alunos</h6>
-                    <strong>{total}</strong>
+                    <h6>TOTAL DE ALUNOS</h6>
+                    <strong className="text-primary">{total}</strong>
                 </div>
             </div>
             <div className="col-md-4">
-                <div className="card p-2 text-success">
-                    <h6>Activos</h6>
-                    <strong>{activos}</strong>
+                <div className="card p-2 ">
+                    <h6>ACTIVOS</h6>
+                    <strong className="text-success">{activos}</strong>
                 </div>
             </div>
             <div className="col-md-4">
-                <div className="card p-2 text-danger">
-                    <h6>Desactivos</h6>
-                    <strong>{desactivos}</strong>
+                <div className="card p-2 ">
+                    <h6>NÃO ACTIVOS</h6>
+                    <strong className="text-danger">{desactivos}</strong>
                 </div>
             </div>
         </div>

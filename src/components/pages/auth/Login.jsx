@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react'
+import { useAuth } from '../../../hooks/useAuth'
+import { useNavigate } from 'react-router-dom'
 import splash1 from './../../../assets/img/splash/splash1.png';
 import back1 from './../../../assets/img/back/back1.jpg';
 
@@ -73,7 +75,35 @@ const STYLES = `
 
 const c = (name) => `${P}-${name}`;
 
-export default function SignUp() {
+export default function Login() {
+
+  const { login, loading, error, isAuthenticated } = useAuth()
+  const navigate = useNavigate()
+
+  const [form, setForm] = useState({
+    email: '',
+    password: '',
+  })
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/', { replace: true })
+    }
+  }, [isAuthenticated, navigate])
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if (!form.email || !form.password) return
+    await login(form)
+  }
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  //----------------------------Para rever
   const [current, setCurrent] = useState(0);
   const [remember, setRemember] = useState(false);
 
@@ -136,40 +166,32 @@ export default function SignUp() {
 
           {/* ── RIGHT PANEL ── */}
           <div className={c("right")}>
-            <h2>Sign up</h2>
+            <h2>Login</h2>
+            <form onSubmit={handleSubmit} className="d-flex flex-column align-items-center w-100">
+            <div className={c("field")}>
+              <span className={c("icon fa fa-user")}></span>
+              <input className={c("input")}  type="text" label="Email" value={form.email}
+              onChange={handleChange} name="email" placeholder="Digite seu email"/>
+            </div>
+            
 
             <div className={c("field")}>
-              <span className={c("icon")}>&#128100;</span>
-              <input className={c("input")} type="text" placeholder="Your Name" />
+              <span className={c("icon fa fa-lock")}></span>
+              <input className={c("input")} name="password" value={form.password} type="password" onChange={handleChange}
+            placeholder="Digite sua senha" />
             </div>
-
-            <div className={c("field")}>
-              <span className={c("icon")}>&#128274;</span>
-              <input className={c("input")} type="password" placeholder="Password" />
-            </div>
-
-            <div className={c("remRow")}>
-              <input
-                type="checkbox"
-                id="su23-rem"
-                checked={remember}
-                onChange={e => setRemember(e.target.checked)}
-              />
-              <label htmlFor="su23-rem">Remember me</label>
-            </div>
+      
 
             <div>
-              <button className={c("btn")}>Log in</button>
+              <button disabled={loading} className={c("btn btn-login btn-primary")}>{loading ? 'Entrando...' : 'Login'}</button>
             </div>
 
-            <div className={c("social")}>
-              <span>Or login with</span>
-              <button className={`${c("sBtn")} ${c("fb")}`}>f</button>
-              <button className={`${c("sBtn")} ${c("tw")}`}>t</button>
-              <button className={`${c("sBtn")} ${c("gg")}`}>G</button>
-            </div>
+            
+              
+              {error && <p className="text-darnger text-sm">{error}</p>}
+            
+            </form>
           </div>
-
         </div>
       </div>
     </>

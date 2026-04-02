@@ -1,24 +1,26 @@
 import { useState, useEffect } from 'react'
 import { useAuth } from '../../../hooks/useAuth'
 import { useNavigate } from 'react-router-dom'
-import splash1 from './../../../assets/img/splash/splash1.png';
-import back1 from './../../../assets/img/back/back1.jpg';
 
-//const BG_URL = './../../../assets/img/back/back1.jpg';
+import splash1 from './../../../assets/img/splash/splash1.jpg';
+import splash2 from './../../../assets/img/splash/splash2.jpg';
+import splash3 from './../../../assets/img/splash/splash3.jpg';
+import splash4 from './../../../assets/img/splash/splash4.jpg';
+
+import back1 from './../../../assets/img/back/back1.jpg';
 
 const SLIDES = [
   { tag: "Bem-vindo",   title: "Crie sua conta grátis",      sub: "Acesso rápido e seguro à plataforma." },
   { tag: "Conecte-se",  title: "Trabalhe de qualquer lugar",  sub: "Sincronize seus dados em todos os dispositivos." },
   { tag: "Segurança",   title: "Seus dados protegidos",       sub: "Criptografia de ponta a ponta em tudo." },
+  { tag: "Novo",   title: "Meu titulo",       sub: "Criptografia de ponta a ponta em tudo." },
 ];
 
 const IMGS = [
-  "https://picsum.photos/seed/signup1/500/600",
-  "https://picsum.photos/seed/signup2/500/600",
-  "https://picsum.photos/seed/signup3/500/600",
+  splash1,splash2,splash3,splash4,
 ];
 
-// Unique prefix — guarantees zero style leakage
+// prefixo — para evitar vazamento
 const P = "su23";
 
 const STYLES = `
@@ -30,14 +32,13 @@ const STYLES = `
 .${P}-slide{position:absolute;inset:0;opacity:0;transition:opacity .6s ease;}
 .${P}-slide.${P}-active{opacity:1;}
 .${P}-slide img{width:100%;height:100%;object-fit:cover;display:block;}
-.${P}-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.08),rgba(0,0,0,.55));pointer-events:none;}
 .${P}-caption{position:absolute;bottom:52px;left:0;right:0;padding:0 28px;}
-.${P}-tag{display:inline-block;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.45);color:#fff;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:8px;}
-.${P}-ctitle{font-size:18px;font-weight:800;color:#fff;margin:0 0 4px;line-height:1.3;}
-.${P}-csub{font-size:12px;color:rgba(255,255,255,.8);margin:0;}
+.${P}-tag{display:inline-block;background:rgba(255,255,255,.2);border:1px solid #007AF0;color:#007AF0;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:8px;}
+.${P}-ctitle{font-size:18px;font-weight:800;color:#007AF0;margin:0 0 4px;line-height:1.3;}
+.${P}-csub{font-size:12px;color:#000;margin:0;}
 .${P}-dots{position:absolute;bottom:18px;left:28px;display:flex;gap:6px;}
-.${P}-dot{height:7px;width:7px;border-radius:4px;background:rgba(255,255,255,.45);border:none;cursor:pointer;transition:width .3s,background .3s;padding:0;}
-.${P}-dot.${P}-dotOn{width:22px;background:#fff;}
+.${P}-dot{height:7px;width:7px;border-radius:4px;background:#007AF0;border:none;cursor:pointer;transition:width .3s,background .3s;padding:0;}
+.${P}-dot.${P}-dotOn{width:22px;background:#007AF0;}
 .${P}-arr{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.25);border:none;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:opacity .2s;color:#fff;font-size:18px;font-weight:700;line-height:1;}
 .${P}-left:hover .${P}-arr{opacity:1;}
 .${P}-arrL{left:8px;}
@@ -62,9 +63,6 @@ const STYLES = `
 .${P}-social span{font-size:13px;color:#888;font-weight:600;margin-right:4px;}
 .${P}-sBtn{width:36px;height:36px;border-radius:8px;border:none;color:#fff;font-size:14px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:opacity .2s,transform .15s;font-weight:700;font-family:'Nunito',sans-serif;}
 .${P}-sBtn:hover{opacity:.85;transform:translateY(-1px);}
-.${P}-fb{background:#3b5998;}
-.${P}-tw{background:#1da1f2;}
-.${P}-gg{background:#ea4335;}
 @media(max-width:640px){
   .${P}-card{flex-direction:column;}
   .${P}-div{display:none;}
@@ -104,16 +102,13 @@ export default function Login() {
   }
 
   //----------------------------Para rever
-  const [current, setCurrent] = useState(0);
-  const [remember, setRemember] = useState(false);
+  const [current, setCurrent] = useState(0);  
 
   useEffect(() => {
     const id = setInterval(() => setCurrent(i => (i + 1) % SLIDES.length), 3500);
     return () => clearInterval(id);
   }, []);
 
-  const prev = () => setCurrent(i => (i - 1 + SLIDES.length) % SLIDES.length);
-  const next = () => setCurrent(i => (i + 1) % SLIDES.length);
   const go   = (i) => setCurrent(i);
 
   return (
@@ -146,19 +141,14 @@ export default function Login() {
 
               <div className={c("dots")}>
                 {SLIDES.map((_, i) => (
-                  <button
+                  <button disabled
                     key={i}
                     className={`${c("dot")}${i === current ? " " + c("dotOn") : ""}`}
                     onClick={() => go(i)}
                   />
                 ))}
-              </div>
-
-              <button className={`${c("arr")} ${c("arrL")}`} onClick={prev}>&#8249;</button>
-              <button className={`${c("arr")} ${c("arrR")}`} onClick={next}>&#8250;</button>
-            </div>
-
-            <button className={c("createLink")}>Create an account</button>
+              </div>              
+            </div>            
           </div>
 
           {/* ── DIVIDER ── */}

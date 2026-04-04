@@ -8,7 +8,7 @@ export default function ClassModal({ show, onClose, onSave, editing }) {
     })
     useEffect(() =>{
         if(editing){
-            setForm(editing)
+            //setForm(editing)
         }
     }, [editing])
 

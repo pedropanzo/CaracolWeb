@@ -2,7 +2,7 @@ import PageBase from "../../../Layout/PageBase/PageBase";
 import ChangePassword from "./ChangePassword";
 import NotificationPreferences from "./NotificationPreferences";
 import agt from "../../../../assets/img/agt.png";
-import caracollogo from "../../../../assets/img/caracol.png";
+//import caracollogo from "../../../../assets/img/caracol.png";
 
 export default function Settings() {
   return (
@@ -576,7 +576,7 @@ export default function Settings() {
                   <div className="widget style1 white-bg">
                     <div className="row">
                       <div className="col-xs-3">
-                        <img className="img-lg h-300 w-300" src={caracollogo} alt="" />
+                        <img className="img-lg h-300 w-300" src="" alt="" />
                       </div>
                     </div>
                   </div>

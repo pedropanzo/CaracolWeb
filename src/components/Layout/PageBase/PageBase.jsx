@@ -1,11 +1,13 @@
+import { Outlet } from "react-router-dom"
+
 const PageBase = (props) => {
     return (
         <>
             <div className="row wrapper border-bottom white-bg page-heading">
-                <div class="col-lg-10">
+                <div className="col-lg-10">
                     <h2>
                         {props.title}
-                        <p className="line">¯¯¯¯¯</p>
+                        <p className="line">¯¯¯¯¯ </p>
                     </h2>
                 </div>
             </div>

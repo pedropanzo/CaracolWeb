@@ -3,6 +3,7 @@ import { student as data } from './mockStudent'
 import StudentSearch from '../../Student/StudentSearch'
 import StudentStats from '../../Student/StudentStats'
 import StudentTable from '../../Student/StudentTable'
+import PageBase from '../../Layout/PageBase/PageBase'
 
 export default function StudentPage(){
     const [search, setSearch] = useState("")
@@ -11,11 +12,12 @@ export default function StudentPage(){
         s.name.toLowerCase().includes(search.toLowerCase())
     )
     return (
-        <div className='container mt-4'>
-            <h3 className='mb-3'>Dados geral dos alunos</h3>
+        <PageBase  title="Dados geral dos alunos">
+        <div className='container '>            
             <StudentSearch search={search} setSearch={setSearch} />
             <StudentStats student={filtered} />
             <StudentTable student={filtered} />
         </div>
+        </PageBase>
     )
 }

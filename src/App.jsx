@@ -1,6 +1,5 @@
 import { BrowserRouter } from 'react-router-dom'
 import  AppRoutes  from './components/routes/AppRoutes.jsx'
-import $ from 'jquery';
 
 import './assets/css/bootstrap.min.css';
 import './assets/font-awesome/css/font-awesome.css'

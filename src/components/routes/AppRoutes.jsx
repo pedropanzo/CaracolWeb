@@ -31,10 +31,10 @@ export default function AppRoutes() {
     <Routes>
 
       <Route element={<AuthLayout />}>
-        <Route path="/login" element={<Login />} />
+      <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Route>
-
+      
 
       <Route element={<PrivateRoute />}>
         <Route element={<AppLayout />}>
@@ -43,7 +43,6 @@ export default function AppRoutes() {
           <Route path="/alunos/novo" element={<StudentForm />} />
           <Route path="/alunos/dados-pessoal" element={<StudentPage />} />
           <Route path="/alunos/desistente" element={<StudentDropOut />} />
-          <Route path="/alunos/academico" element={<StudentsAcademico/>} />
           <Route path="/escolas/nova" element={<SchoolForm />} />
           <Route path="/escolas" element={<SchoolList />} />
           <Route path="/ano-lectivo" element={<AcademicYearPage />} />

@@ -22,8 +22,8 @@ import Disciplina from '../pages/disciplina/DisciplinesPage';
 import ServiceCostPage from '../pages/service-cost/ServiceCostPage';
 import Profile from "../pages/user/Profile/Profile";
 import Settings from "../pages/user/Settings/Settings";
-import AccumulatedValuesPage from "../pages/reports/accumulatedvalues/AccumulatedValuesPage";
-
+import Lockscreen from "../pages/lockscreen/Lockscreen"
+import AccumulatedValuesPage from '../pages/reports/accumulatedvalues/AccumulatedValuesPage';
 
 
 export default function AppRoutes() {
@@ -54,6 +54,7 @@ export default function AppRoutes() {
           <Route path='/custo-servico' element={<ServiceCostPage />} />
           <Route path="/perfil" element={<Profile />} />
           <Route path="/configuracoes" element={<Settings />} />
+          <Route path='/Acumulados' element={<AccumulatedValuesPage />} />
         </Route>
       </Route>
 

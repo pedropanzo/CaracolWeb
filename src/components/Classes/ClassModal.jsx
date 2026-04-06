@@ -2,7 +2,6 @@ import {useState, useEffect} from "react"
 export default function ClassModal({ show, onClose, onSave, editing }) {
 
 
-export default function ClassModal({ show, onClose, onSave, editing}){
     const [form, setForm] = useState({
         name: "",
         type: "Transição"

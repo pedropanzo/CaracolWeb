@@ -1,11 +1,13 @@
-import { useState, useEffect } from "react"
+import {useState, useEffect} from "react"
+export default function ClassModal({ show, onClose, onSave, editing }) {
+
 
 export default function ClassModal({ show, onClose, onSave, editing}){
     const [form, setForm] = useState({
         name: "",
         type: "Transição"
     })
-    useEffect(() => {
+    useEffect(() =>{
         if(editing){
             setForm(editing)
         }
@@ -20,7 +22,9 @@ export default function ClassModal({ show, onClose, onSave, editing}){
         onSave(form)
         onClose()
     }
-    if(!show) return null
+
+    if (!show) return null;
+
     return (
         <>
             {/* BACKDROP */}
@@ -64,15 +68,18 @@ export default function ClassModal({ show, onClose, onSave, editing}){
                             >
                                 Cancelar
                             </button>
-                        <button
-                            className="btn btn-primary"
-                            onClick={handleSubmit}
-                        >
-                            Salvar
-                        </button>
+
+                            <button
+                                className="btn btn-primary"
+                                onClick={handleSubmit}
+                            >
+                                Salvar
+                            </button>
+                        </div>
+
                     </div>
                 </div>
             </div>
-        </div>
-    )
+        </>
+    );
 }

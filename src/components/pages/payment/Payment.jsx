@@ -114,8 +114,7 @@ export default function Payment() {
               <div className="col-xs-6 col-sm-4">
                 <div className="section-box">
                   <div className="panel-blue">Mensalidades</div>
-                  <div style={{padding:4}}>
-                    <div className="panel-blue" style={{borderRadius:3,marginBottom:4,fontSize:11}}>REFERENTE</div>
+                  <div style={{padding:4}}>                    
                     <div className="scrollable">
                       {MENSALIDADES.map(m => (
                         <div key={m} className={`list-item ${mensalSel===m?"active":""}`} onClick={()=>setMensalSel(m)}>{m}</div>
@@ -129,8 +128,7 @@ export default function Payment() {
               <div className="col-xs-6 col-sm-4">
                 <div className="section-box">
                   <div className="panel-blue">Outros Pagamentos</div>
-                  <div style={{padding:4}}>
-                    <div className="panel-blue" style={{borderRadius:3,marginBottom:4,fontSize:11}}>REFERENTE</div>
+                  <div style={{padding:4}}>                    
                     <div className="scrollable">
                       {OUTROS.map(o => (
                         <div key={o} className={`list-item ${outroSel===o?"active":""}`} onClick={()=>setOutroSel(o)}>{o}</div>

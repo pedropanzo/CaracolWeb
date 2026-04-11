@@ -22,9 +22,11 @@ import Classes from '../pages/classes/Classes';
 import Disciplina from '../pages/disciplina/DisciplinesPage';
 import ServiceCostPage from '../pages/service-cost/ServiceCostPage';
 import Grades from "../pages/grades/Grades";
+import Banks from "../pages/banks/Banks";
 import Profile from "../pages/user/Profile/Profile";
 import Settings from "../pages/user/Settings/Settings";
 import Lockscreen from '../pages/lockscreen/Lockscreen';
+import Payment from '../pages/payment/Payment';
 
 
 
@@ -54,11 +56,14 @@ export default function AppRoutes() {
           <Route path='/Disciplina' element={<Disciplina />} />
           <Route path='/custo-servico' element={<ServiceCostPage />} />
           <Route path='/lancamento-notas' element={<Grades />} />
+          <Route path='/Banco' element={<Banks />} />
           <Route path="/perfil" element={<Profile />} />
           <Route path="/configuracoes" element={<Settings />} />
+          <Route path="/pagamento" element={<Payment />} />
         </Route>
       </Route>
 
+      <Route path="/pagamento" element={<Payment />} />
       <Route path="/lockscreen" element={<Lockscreen />} />
       <Route path="*" element={<NotFound />} />
 

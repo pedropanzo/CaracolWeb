@@ -27,7 +27,6 @@ import Profile from "../pages/user/Profile/Profile";
 import Settings from "../pages/user/Settings/Settings";
 import Lockscreen from "../pages/lockscreen/Lockscreen"
 import AccumulatedValuesPage from '../pages/reports/accumulatedvalues/AccumulatedValuesPage';
-import Lockscreen from '../pages/lockscreen/Lockscreen';
 import Payment from '../pages/payment/Payment';
 
 export default function AppRoutes() {

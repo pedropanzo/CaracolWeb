@@ -38,12 +38,14 @@ export default function AppRoutes() {
         <Route path="/register" element={<Register />} />
       </Route>
 
-
+             
       <Route element={<PrivateRoute />}>
         <Route element={<AppLayout />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/alunos" element={<StudentList />} />
           <Route path="/alunos/novo" element={<StudentForm />} />
+          <Route path="/alunos/confirmacao" element={<StudentConfirm />} /> 
+          <Route path="/alunos/index" element={<StudentsAcademico />} /> 
           <Route path="/alunos/dados-pessoal" element={<StudentPage />} />
           <Route path="/alunos/desistente" element={<StudentDropOut />} />
           <Route path='/alunos/suspensao' element={<SuspensionPage />} />

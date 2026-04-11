@@ -80,14 +80,14 @@ export default function Payment() {
   return (
     <>
     
+    <PageBase title="Pagamentos">
       <style>{styles}</style>
       <div className="container-fluid" style={{ maxWidth:1150, padding:"14px 10px" }}>
 
         {/* Título */}
-        <div className="pag-title">Pagamentos</div>
-        <div className="pag-title-underline" />
+         
 
-        <div className="row">
+         
           {/* ===== COLUNA ESQUERDA ===== */}
           <div className="col-xs-12 col-md-8">
             <div className="row">
@@ -114,8 +114,7 @@ export default function Payment() {
               <div className="col-xs-6 col-sm-4">
                 <div className="section-box">
                   <div className="panel-blue">Mensalidades</div>
-                  <div style={{padding:4}}>
-                    <div className="panel-blue" style={{borderRadius:3,marginBottom:4,fontSize:11}}>REFERENTE</div>
+                  <div style={{padding:4}}>                    
                     <div className="scrollable">
                       {MENSALIDADES.map(m => (
                         <div key={m} className={`list-item ${mensalSel===m?"active":""}`} onClick={()=>setMensalSel(m)}>{m}</div>
@@ -129,8 +128,7 @@ export default function Payment() {
               <div className="col-xs-6 col-sm-4">
                 <div className="section-box">
                   <div className="panel-blue">Outros Pagamentos</div>
-                  <div style={{padding:4}}>
-                    <div className="panel-blue" style={{borderRadius:3,marginBottom:4,fontSize:11}}>REFERENTE</div>
+                  <div style={{padding:4}}>                    
                     <div className="scrollable">
                       {OUTROS.map(o => (
                         <div key={o} className={`list-item ${outroSel===o?"active":""}`} onClick={()=>setOutroSel(o)}>{o}</div>
@@ -271,7 +269,7 @@ export default function Payment() {
 
                 {/* Tipo de Papel */}
                 <div style={{display:"flex",alignItems:"center",gap:10,padding:"8px 0",borderTop:"1px solid #eee",marginBottom:10}}>
-                  <span style={{fontSize:18}}>🖨️</span>
+                  <span style={{fontSize:18}} className="fa fa-print"></span>
                   <span style={{fontWeight:600,fontSize:12}}>Tipo de Papel</span>
                   {["A4","Personalizado"].map(t=>(
                     <label key={t} style={{margin:0,fontSize:12,display:"flex",alignItems:"center",gap:4,cursor:"pointer"}}>
@@ -282,19 +280,19 @@ export default function Payment() {
 
                 {/* Botões de Ação */}
                 <div style={{display:"flex",justifyContent:"space-around",alignItems:"center",paddingTop:8,borderTop:"1px solid #eee"}}>
-                  <button className="btn-action" style={{background:"#1565C0",color:"#fff",fontSize:22}} title="Avançar">›</button>
+                  <button className="btn-action" style={{background:"#2196F3",color:"#fff",fontSize:22}} title="Avançar">›</button>
                   <button className="btn-action" style={{background:"#2196F3",color:"#fff"}} title="Duplicar">2×</button>
-                  <button className="btn-action" style={{background:"#fb8c00",color:"#fff",fontSize:16}} title="Pagamento">💰</button>
-                  <button className="btn-action" style={{background:"#546e7a",color:"#fff",fontSize:16}} title="Recibo">📄</button>
-                  <button className="btn-action" style={{background:"#e53935",color:"#fff",fontSize:16}} title="Limpar">🧹</button>
-                  <button className="btn-action" style={{background:"#43a047",color:"#fff",fontSize:18}} title="Confirmar">✓</button>
+                  <button className="btn-action" style={{background:"#2196F3",color:"#fff",fontSize:16}} title="Pagamento">💰</button>
+                  <button className="btn-action" style={{background:"#2196F3",color:"#fff",fontSize:16}} title="Recibo">📄</button>
+                  <button className="btn-action" style={{background:"#2196F3",color:"#fff",fontSize:16}} title="Limpar">🧹</button>
+                  <button className="btn-action" style={{background:"#2196F3",color:"#fff",fontSize:18}} title="Confirmar">✓</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
       
+      </PageBase>
     </>
   );
 }

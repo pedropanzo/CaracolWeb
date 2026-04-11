@@ -8,6 +8,7 @@ import StudentList from '../pages/students/StudentsList';
 import StudentForm from '../pages/students/StudentForm';
 import StudentsAcademico from '../pages/students/StudentsAcademico';
 import StudentConfirm from '../pages/students/StudentConfirm';
+import SuspensionPage from '../pages/students/SuspensionPage';
 import StudentPage from '../pages/students/StudentPage';
 import StudentDropOut from '../pages/students/StudentDropOut';
 import SchoolForm from '../pages/school/SchoolForm';
@@ -25,29 +26,29 @@ import Banks from "../pages/banks/Banks";
 import Profile from "../pages/user/Profile/Profile";
 import Settings from "../pages/user/Settings/Settings";
 import Lockscreen from "../pages/lockscreen/Lockscreen"
-import AccumulatedValuesPage from '../pages/reports/accumulatedvalues/AccumulatedValuesPage';
-import Lockscreen from '../pages/lockscreen/Lockscreen';
+import AccumulatedValuesPage from '../pages/reports/accumulatedValues/AccumulatedValuesPage';
 import Payment from '../pages/payment/Payment';
-
-
 
 export default function AppRoutes() {
   return (
     <Routes>
 
       <Route element={<AuthLayout />}>
-      <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Route>
-      
 
+             
       <Route element={<PrivateRoute />}>
         <Route element={<AppLayout />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/alunos" element={<StudentList />} />
           <Route path="/alunos/novo" element={<StudentForm />} />
+          <Route path="/alunos/confirmacao" element={<StudentConfirm />} /> 
+          <Route path="/alunos/index" element={<StudentsAcademico />} /> 
           <Route path="/alunos/dados-pessoal" element={<StudentPage />} />
           <Route path="/alunos/desistente" element={<StudentDropOut />} />
+          <Route path='/alunos/suspensao' element={<SuspensionPage />} />
           <Route path="/escolas/nova" element={<SchoolForm />} />
           <Route path="/escolas" element={<SchoolList />} />
           <Route path="/ano-lectivo" element={<AcademicYearPage />} />
@@ -65,7 +66,6 @@ export default function AppRoutes() {
         </Route>
       </Route>
 
-      <Route path="/pagamento" element={<Payment />} />
       <Route path="/lockscreen" element={<Lockscreen />} />
       <Route path="*" element={<NotFound />} />
 

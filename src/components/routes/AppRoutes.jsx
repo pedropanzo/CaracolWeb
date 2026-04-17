@@ -8,6 +8,7 @@ import StudentList from '../pages/students/StudentsList';
 import StudentForm from '../pages/students/StudentForm';
 import StudentsAcademico from '../pages/students/StudentsAcademico';
 import StudentConfirm from '../pages/students/StudentConfirm';
+import SuspensionPage from '../pages/students/SuspensionPage';
 import StudentPage from '../pages/students/StudentPage';
 import StudentDropOut from '../pages/students/StudentDropOut';
 import SchoolForm from '../pages/school/SchoolForm';
@@ -20,29 +21,35 @@ import Register from '../pages/auth/register';
 import Classes from '../pages/classes/Classes';
 import Disciplina from '../pages/disciplina/DisciplinesPage';
 import ServiceCostPage from '../pages/service-cost/ServiceCostPage';
+import Grades from "../pages/grades/Grades";
+import Banks from "../pages/banks/Banks";
+import GradesEntry from "../pages/grades/GradesEntry";
 import Profile from "../pages/user/Profile/Profile";
 import Settings from "../pages/user/Settings/Settings";
 import Lockscreen from "../pages/lockscreen/Lockscreen";
-import AccumulatedValuesPage from "../pages/reports/accumulatedvalues/AccumulatedValuesPage";
-import TransferredNotesPage from "../pages/student/TransferredNotes/TransferredNotesPage";
+import AccumulatedValuesPage from "../pages/reports/accumulatedValues/AccumulatedValuesPage";
+import TransferredNotesPage from "../pages/student/TransferredNotes/TransferredNotesPage";import Payment from '../pages/payment/Payment';
 
 export default function AppRoutes() {
   return (
     <Routes>
 
       <Route element={<AuthLayout />}>
-      <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Route>
-      
 
+             
       <Route element={<PrivateRoute />}>
         <Route element={<AppLayout />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/alunos" element={<StudentList />} />
           <Route path="/alunos/novo" element={<StudentForm />} />
+          <Route path="/alunos/confirmacao" element={<StudentConfirm />} /> 
+          <Route path="/alunos/index" element={<StudentsAcademico />} /> 
           <Route path="/alunos/dados-pessoal" element={<StudentPage />} />
           <Route path="/alunos/desistente" element={<StudentDropOut />} />
+          <Route path='/alunos/suspensao' element={<SuspensionPage />} />
           <Route path="/escolas/nova" element={<SchoolForm />} />
           <Route path="/escolas" element={<SchoolList />} />
           <Route path="/ano-lectivo" element={<AcademicYearPage />} />
@@ -51,10 +58,12 @@ export default function AppRoutes() {
           <Route path="/Classe" element={<Classes />} />
           <Route path='/Disciplina' element={<Disciplina />} />
           <Route path='/custo-servico' element={<ServiceCostPage />} />
+          <Route path='/lancamento-notas' element={<Grades />} />
+          <Route path='/Banco' element={<Banks />} />
+          <Route path='/notas-implantadas' element={<GradesEntry />} />
           <Route path="/perfil" element={<Profile />} />
           <Route path="/configuracoes" element={<Settings />} />
           <Route path='/Acumulados' element={<AccumulatedValuesPage />} />
-          <Route path='/TransferredNotes'element={<TransferredNotesPage/>}/>
         </Route>
       </Route>
 

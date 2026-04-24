@@ -24,9 +24,12 @@ import ServiceCostPage from '../pages/service-cost/ServiceCostPage';
 import Grades from "../pages/grades/Grades";
 import Banks from "../pages/banks/Banks";
 import GradesEntry from "../pages/grades/GradesEntry";
+import NominalList from '../pages/reports/student/NominalList';
 import Profile from "../pages/user/Profile/Profile";
 import Settings from "../pages/user/Settings/Settings";
 import Lockscreen from "../pages/lockscreen/Lockscreen";
+import AccumulatedValuesPage from "../pages/reports/accumulatedValues/AccumulatedValuesPage";
+import TransferredNotesPage from "../pages/student/TransferredNotes/TransferredNotesPage";import Payment from '../pages/payment/Payment';
 import AccumulatedValuesPage from '../pages/reports/accumulatedValues/AccumulatedValuesPage';
 import Payment from '../pages/payment/Payment';
 import StudentStatus from "../pages/student/StudentStatus";
@@ -63,6 +66,7 @@ export default function AppRoutes() {
           <Route path='/lancamento-notas' element={<Grades />} />
           <Route path='/Banco' element={<Banks />} />
           <Route path='/notas-implantadas' element={<GradesEntry />} />
+          <Route path='/Imp-lista-nominal-alunos' element={<NominalList />} />
           <Route path="/perfil" element={<Profile />} />
           <Route path="/configuracoes" element={<Settings />} />
           <Route path='/Acumulados' element={<AccumulatedValuesPage />} />

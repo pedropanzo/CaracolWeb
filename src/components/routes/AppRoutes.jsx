@@ -34,6 +34,11 @@ import Payment from '../pages/payment/Payment';
 import StudentStatus from "../pages/student/StudentStatus";
 import PrintSuspendedStudents from "../pages/student/PrintSuspendedStudents";
 import PrintDropoutsStudent from '../pages/reports/student/PrintDropoutsStudent';
+import TransferredNotesPage from "../pages/student/TransferredNotes/TransferredNotesPage";
+import AccumulatedValuesPage from '../pages/reports/accumulatedValues/AccumulatedValuesPage';
+import Payment from '../pages/payment/Payment';
+import StudentStatus from "../pages/student/StudentStatus";
+import SuspendedStudentsPrint from "../pages/reports/student/SuspendedStudentsPrint";
 
 export default function AppRoutes() {
   return (
@@ -74,6 +79,7 @@ export default function AppRoutes() {
           <Route path="/transicaodeclasse" element={<StudentStatus/>} />
           <Route path="/Imp-pedagogica" element={<PrintSuspendedStudents/>} />
           <Route path="/Imp-lista-desistente-alunos" element={<PrintDropoutsStudent/>} />
+          <Route path="/Imp-pedagogica" element={<SuspendedStudentsPrint/>} />
         </Route>
       </Route>
 

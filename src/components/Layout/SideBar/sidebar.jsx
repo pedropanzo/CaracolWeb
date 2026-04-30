@@ -105,6 +105,7 @@ const Sidebar = () => {
             submenu: [
                 { name: "Imp. Administrativas", path: "/Imp-admin" },
                 { name: "Imp. Pedagógicas", path: "/Imp-pedagogica" },
+                { name: "Imp. Funcionarios", path: "/Imp-funcionario" },
                 { name: "Imp. Finançeiras", path: "/Imp-financeiras" },
                 { name: "Imp. Lista nominal de alunos", path: "/Imp-lista-nominal-alunos" },
                 { name: "Imp. Alunos desistentes", path: "/Imp-lista-desistente-alunos" },

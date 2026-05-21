@@ -107,6 +107,7 @@ const Sidebar = () => {
                 { name: "Imp. Pedagógicas", path: "/Imp-pedagogica" },
                 { name: "Imp. Finançeiras", path: "/Imp-financeiras" },
                 { name: "Imp. Lista nominal de alunos", path: "/Imp-lista-nominal-alunos" },
+                { name: "Imp. Lista nominal de professores", path: "/Imp-professores" },
             ]
         },
         {

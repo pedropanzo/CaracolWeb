@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import AppLayout from '../Layout/AppLayout'
 import { PrivateRoute } from './PrivateRoute'
-import AuthLayout from '../Layout/AuthLayout';
+import AuthLayout from '../Layout/AuthLayout';     
 import Login from '../pages/auth/Login';
 import Dashboard from '../pages/dashboard/Dashboard';
 import StudentList from '../pages/students/StudentsList';
@@ -21,7 +21,7 @@ import NotFound from '../pages/notFound/NotFound';
 import Register from '../pages/auth/register';
 import Classes from '../pages/classes/Classes';
 import Disciplina from '../pages/disciplina/DisciplinesPage';
-import ServiceCostPage from '../pages/service-cost/ServiceCostPage';
+import ServiceCostPage from '../pages/service-cost/ServiceCostPage'; 
 import Grades from "../pages/grades/Grades";
 import Banks from "../pages/banks/Banks";
 import GradesEntry from "../pages/grades/GradesEntry";
@@ -35,8 +35,10 @@ import StudentStatus from "../pages/student/StudentStatus";
 import PrintSuspendedStudents from "../pages/student/PrintSuspendedStudents";
 import PrintDropoutsStudent from '../pages/reports/student/PrintDropoutsStudent';
 import SuspendedStudentsPrint from "../pages/reports/student/SuspendedStudentsPrint";
+import TeachersReport from '../pages/reports/TeachersReport';
 import EmployeesPrint from '../pages/reports/employee/EmployeesPrint';
 import ClassHistoryReport from '../pages/reports/class/ClassHistoryReport';
+
 
 export default function AppRoutes() {
   return (
@@ -77,9 +79,8 @@ export default function AppRoutes() {
           <Route path="/transicaodeclasse" element={<StudentStatus/>} />
           <Route path="/Imp-pedagogica" element={<PrintSuspendedStudents/>} />
           <Route path="/Imp-lista-desistente-alunos" element={<PrintDropoutsStudent/>} />
-          <Route path="/Imp-pedagogica" element={<SuspendedStudentsPrint/>} />
-          <Route path="/Imp-funcionario" element={<EmployeesPrint/>} />
-          <Route path="/Imp-historico-classes" element={<ClassHistoryReport/>} />
+          <Route path="/Imp-professores" element={<TeachersReport/>} />
+      
         </Route>
       </Route>
 

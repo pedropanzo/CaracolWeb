@@ -50,10 +50,10 @@ export default function StudentTable({ student }) {
                                                 </span>
                                             </td>
                                             <td>
-                                                <button className="btn btn-success btn-xs" data-bs-toggle="tooltip" data-bs-original-title="Detalhes" id={s.id} onclick="return visualizar('@aluno.Id');">
+                                                <button className="btn btn-success btn-xs" data-bs-toggle="tooltip" data-bs-original-title="Detalhes" id={s.id}>
                                                     <i className="fa fa-eye"></i>
                                                 </button>
-                                                <button className="btn btn-primary btn-xs" data-bs-toggle="tooltip" data-bs-original-title="Atualizar" id={s.id} onclick="return atualizar('@aluno.Id');">
+                                                <button className="btn btn-primary btn-xs" data-bs-toggle="tooltip" data-bs-original-title="Atualizar" id={s.id}>
                                                     <i className="fa fa-edit"></i>
                                                 </button>
                                             </td>

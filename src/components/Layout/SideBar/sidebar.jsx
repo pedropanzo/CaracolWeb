@@ -71,10 +71,8 @@ const Sidebar = () => {
                 { name: "Lançamento de notas", path: "/lancamento-notas" },
                 { name: "Cumprimento de notas", path: "/TransferredNotes" },
                 { name: "Notas implantadas", path: "/notas-implantadas" },
-                { name: "Transição de classe", path: "/Turma" },
-                
-                { name: "Cumprimento de notas", path: "/" },
-                { name: "Notas implantadas", path: "/notas-implantadas" },
+                { name: "Transição de classe", path: "/Turma" },                
+                { name: "Cumprimento de notas", path: "/" },            
                 { name: "Transiçãodeclasse", path: "/transicaodeclasse" },
                
             ],

@@ -50,7 +50,7 @@ const ServiceCostHistoryPage = () => {
 
   return (
     <PageBase title="Historico de custos de Serviços">
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "21px" }}>
       <Header />
       
       <Filters

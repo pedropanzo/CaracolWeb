@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faPrint } from '@fortawesome/free-solid-svg-icons'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 const ReportFilters = () => {
   
@@ -36,7 +39,7 @@ const ReportFilters = () => {
             fontSize: "18px",
           }}
         >
-          👤
+           <FontAwesomeIcon icon={faUser} />
         </div>
 
         <div style={{ fontSize: "13px" }}>
@@ -109,7 +112,7 @@ const ReportFilters = () => {
             gap: "8px",
           }}
         >
-          🖨️ IMPRIMIR
+          <FontAwesomeIcon icon={faPrint} /> Imprimir
         </button>
       </div>
     </div>

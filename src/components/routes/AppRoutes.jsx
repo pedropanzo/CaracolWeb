@@ -38,6 +38,7 @@ import SuspendedStudentsPrint from "../pages/reports/student/SuspendedStudentsPr
 import TeachersReport from '../pages/reports/TeachersReport';
 import EmployeesPrint from '../pages/reports/employee/EmployeesPrint';
 import ClassHistoryReport from '../pages/reports/class/ClassHistoryReport';
+import ServiceCostHistoryPage from "../pages/reports/ServiceCostHistoryPage";
 
 
 export default function AppRoutes() {
@@ -80,6 +81,7 @@ export default function AppRoutes() {
           <Route path="/Imp-pedagogica" element={<PrintSuspendedStudents/>} />
           <Route path="/Imp-lista-desistente-alunos" element={<PrintDropoutsStudent/>} />
           <Route path="/Imp-professores" element={<TeachersReport/>} />
+          <Route path="/Imp-historico-custos" element={<ServiceCostHistoryPage/>} />
       
         </Route>
       </Route>

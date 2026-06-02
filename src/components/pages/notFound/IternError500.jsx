@@ -1,6 +1,6 @@
 export default function NotFound() {
   return (
-    <body class="gray-bg">
+    <div className="gray-bg" style={{ width: "100vw", height: "100vh" }}>
       <div class="middle-box text-center animated fadeInDown">
         <h1>404</h1>
         <h3 class="font-bold">PErro do Servidor Interno</h3>
@@ -11,6 +11,6 @@ export default function NotFound() {
           <br /><Link to="/" className="btn btn-primary m-t">Dashboard</Link>
         </div>
       </div>
-    </body>
+    </div>
   )
 }

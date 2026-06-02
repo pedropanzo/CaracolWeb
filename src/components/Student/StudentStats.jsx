@@ -48,7 +48,7 @@ export default function StudentStats({ student }) {
                 <div className="widget style1">
                     <div className="row">
                         <div className="col-xs-8 text-right ">
-                            <button className="btn btn-primary mt-3" onclick="return adicionar();">Adicionar Aluno</button>
+                            <button className="btn btn-primary mt-3">Adicionar Aluno</button>
                         </div>
                     </div>
                 </div>

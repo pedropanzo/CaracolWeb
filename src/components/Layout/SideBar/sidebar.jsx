@@ -74,7 +74,6 @@ const Sidebar = () => {
                 { name: "Transição de classe", path: "/Turma" },
                 
                 { name: "Cumprimento de notas", path: "/" },
-                { name: "Notas implantadas", path: "/notas-implantadas" },
                 { name: "Transiçãodeclasse", path: "/transicaodeclasse" },
                
             ],
@@ -112,6 +111,7 @@ const Sidebar = () => {
                 { name: "Imp. Alunos desistentes", path: "/Imp-lista-desistente-alunos" },
                 { name: "Imp. Histórico de classes", path: "/Imp-historico-classes" },
                 { name: "Imp. Historico de custos de serviços", path:"/Imp-historico-custos"}, 
+                { name: "Imp. Historico de turmas criadas", path:"/Imp-historico-de-turmas-criadas"},
             ]
         },
         {

@@ -39,7 +39,7 @@ const ReportFilters = () => {
             fontSize: "18px",
           }}
         >
-           <FontAwesomeIcon icon={faUser} />
+         <FontAwesomeIcon icon={faUser} /> 
         </div>
 
         <div style={{ fontSize: "13px" }}>
